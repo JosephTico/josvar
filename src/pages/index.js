@@ -29,6 +29,12 @@ const DEFAULT_IMAGES = [
     { id: '6', src: full06, thumbnail: thumb06, caption: 'Photo 6', description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.'}
 ];
 
+const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
 class HomeIndex extends React.Component {
 
     constructor() {
@@ -75,7 +81,22 @@ class HomeIndex extends React.Component {
         this.gotoNext();
     }
 
+    handleSubmit = e => {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...this.state })
+      })
+        .then(() => alert("Success!"))
+        .catch(error => alert(error));
+
+      e.preventDefault();
+    };
+
+    handleChange = e => this.setState({ [e.target.name]: e.target.value });
+
     render() {
+    	const { name, email, message } = this.state;
         const siteTitle = this.props.data.site.siteMetadata.title
         const siteDescription = this.props.data.site.siteMetadata.description
 
@@ -119,12 +140,12 @@ class HomeIndex extends React.Component {
                         <p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
                         <div className="row">
                             <div className="8u 12u$(small)">
-                                <form method="post" name="contact" data-netlify="true">
+                                <form method="post" name="contact" data-netlify="true" onSubmit={this.handleSubmit}>
                                 	<input type="hidden" name="form-name" value="contact" />
                                     <div className="row uniform 50%">
-                                        <div className="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="Name" /></div>
-                                        <div className="6u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Email" /></div>
-                                        <div className="12u"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+                                        <div className="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="Name" value={name} onChange={this.handleChange} /></div>
+                                        <div className="6u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Email" value={email} onChange={this.handleChange} /></div>
+                                        <div className="12u"><textarea name="message" id="message" placeholder="Message" rows="4" value={message} onChange={this.handleChange} /></div>
                                     </div>
                                 </form>
                                 <ul className="actions">
