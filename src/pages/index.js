@@ -115,7 +115,7 @@ class HomeIndex extends React.Component {
                         </header>
                         <p>I started making websites when I was 10 years old. Since then, I've been involved in very big online projects, gaining experience on almost every aspect of mantaining a big web application: from design to server administration. Currently pursuing a career in Computer Engineering with a big interest in both software and hardware.</p>
                     	<ul className="actions">
-                            <li><a href="#" className="button">View resume</a></li>
+                            <li><a href="/cv.pdf" className="button">View resume</a></li>
                         </ul>
                     </section>
 
