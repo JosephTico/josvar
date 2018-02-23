@@ -21,8 +21,8 @@ import full05 from '../assets/images/fulls/05.jpg'
 import full06 from '../assets/images/fulls/06.jpg'
 
 const DEFAULT_IMAGES = [
-    { id: '1', src: full01, thumbnail: thumb01, caption: 'Centro Pokémon', description: 'Biggest Spanish-speaking Pokémon community in the world.'},
-    { id: '2', src: full02, thumbnail: thumb02, caption: 'XeonWars', description: 'Shoot \'em up game developedin SFML / C++.'},
+    { id: '1', src: full01, thumbnail: thumb01, caption: 'Centro Pokémon', description: 'Biggest Spanish-speaking Pokémon community in the world. <a href="https://www.cpokemon.com" target="_blank">Visit</a>'},
+    { id: '2', src: full02, thumbnail: thumb02, caption: 'XeonWars', description: "Shoot 'em up game developedin SFML / C++. <a href='https://github.com/proyectos-ce/XeonWars' target='_blank'>View</a>"},
     { id: '3', src: full03, thumbnail: thumb03, caption: 'Photo 3', description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.'},
     { id: '4', src: full04, thumbnail: thumb04, caption: 'Photo 4', description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.'},
     { id: '5', src: full05, thumbnail: thumb05, caption: 'Photo 5', description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.'},
