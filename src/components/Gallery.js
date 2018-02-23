@@ -69,7 +69,7 @@ class Gallery extends Component {
 
                     <h3>{obj.caption}</h3>
                     <p>{obj.description}</p>
-                    {obj.link && <p><a href={obj.link} target="_blank" className="button" style={{marginTop: 15}}>Visit</a></p>}
+                    {obj.link && <p><a href={obj.link} target="_blank" className="button icon fa-chevron-right" style={{marginTop: 15}}>Visit</a></p>}
                 </article>
             );
         });
