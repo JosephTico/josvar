@@ -137,14 +137,7 @@ class HomeIndex extends React.Component {
                         <p>Want to talk about business? Or maybe about videogames? Send me a message below.</p>
                         <div className="row">
                             <div className="8u 12u$(small)">
-                                <form method="post" name="contact" data-netlify="true" onSubmit={this.handleSubmit}>
-                                	<input type="hidden" name="form-name" value="contact" />
-                                    <div className="row uniform 50%">
-                                        <div className="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="Name" value={name} onChange={this.handleChange} /></div>
-                                        <div className="6u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Email" value={email} onChange={this.handleChange} /></div>
-                                        <div className="12u"><textarea name="message" id="message" placeholder="Message" rows="4" value={message} onChange={this.handleChange} /></div>
-                                    </div>
-                                </form>
+                      
                                 <ul className="actions">
                                     <li><input type="submit" value="Send Message" /></li>
                                 </ul>
